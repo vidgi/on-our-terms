@@ -6,10 +6,8 @@ export function DynamicTermsForm() {
   const [name, setName] = useState("");
   const [platformName, setPlatformName] = useState("");
   const [platformMission, setPlatformMission] = useState("");
-  const [userExpectations, setUserExpectations] = useState(
-    "I expect you to empower me to freely express myself and communicate about topics important to me. You must prioritize the safety, security, and integrity of its platform. This includes implementing measures to combat harmful conduct, protect user privacy, and respond promptly to any misuse or violations."
-  );
-  const [platformExpectations, setPlatformExpectations] = useState("I will act in good faith. I will manage my account responsibly.");
+  const [userExpectations, setUserExpectations] = useState();
+  const [platformExpectations, setPlatformExpectations] = useState();
   const [privacyPolicy, setPrivacyPolicy] = useState("");
 
   const missionStatements = {
@@ -28,23 +26,47 @@ export function DynamicTermsForm() {
 
     selectStyle: {
       "& div": {
-        // fontSize: rem(100), // Increase the font size as needed
+        color: "blue",
+        fontWeight: 600,
         textTransform: "uppercase",
       },
       "& input": {
-        fontSize: rem(100), // Ensure the input matches the dropdown font size
+        color: "blue",
+        fontWeight: 600,
+
+        fontSize: rem(100),
         textTransform: "uppercase",
+
+        [theme.fn.smallerThan("sm")]: {
+          fontSize: rem(32),
+        },
       },
       "& .mantine-Select-input, & .mantine-Select-filled, & .mantine-Select-outline": {
+        color: "blue",
+        fontWeight: 600,
         height: rem(100),
-        border: "none", // Remove the default border
-        borderBottom: `2px solid ${theme.colors.gray[4]}`, // Apply an underline
-        borderRadius: 0, // Remove border radius to avoid rounded corners at the bottom
+        border: "none",
+        borderBottom: `2px solid ${theme.colors.gray[4]}`,
+        borderRadius: 0,
+        [theme.fn.smallerThan("sm")]: {
+          height: rem(32),
+          paddingLeft: 0,
+        },
+      },
+    },
+    inputStyle: {
+      "& input": {
+        color: "blue",
+      },
+    },
+    textareaStyle: {
+      "& textarea": {
+        // fontSize: rem(30),
+        color: "blue",
       },
     },
 
     title: {
-      color: "blue",
       fontWeight: 600,
       fontSize: rem(100),
       marginBottom: theme.spacing.md,
@@ -152,29 +174,49 @@ export function DynamicTermsForm() {
             </li>
           </ul>
           <p>Your mission is to {missionStatements[platformName] || "[INSERT PLATFORM MISSION STATEMENT]"}. </p>
-          <p>Here's what I expect from you:</p>
+          <p>
+            <b>Here's what I expect from you:</b>
+          </p>
           <Textarea
-            placeholder="[USER EXPECTATIONS]"
+            className={classes.textareaStyle}
+            placeholder="I expect you to empower me to freely express myself and communicate about topics important to me. You must prioritize the safety, security, and integrity of its platform. This includes implementing measures to combat harmful conduct, protect user privacy, and respond promptly to any misuse or violations."
             value={userExpectations}
             onChange={(event) => updateTemplate("userExpectations", event.currentTarget.value)}
             minRows={3}
             required
           />
-          <p>Here’s what you can expect from me:</p>
+          <p>
+            <b>Here’s what you can expect from me:</b>
+          </p>
           <Textarea
-            placeholder="[PLATFORM EXPECTATIONS]"
+            className={classes.textareaStyle}
+            placeholder="I will act in good faith. I will manage my account responsibly."
             value={platformExpectations}
             onChange={(event) => updateTemplate("platformExpectations", event.currentTarget.value)}
             minRows={3}
             required
           />
-          <p>Updating these Terms</p>
+          <p>
+            <b>Privacy Policy:</b>
+          </p>
+          <Textarea
+            className={classes.textareaStyle}
+            placeholder="My privacy policy is..."
+            value={privacyPolicy}
+            onChange={(event) => updateTemplate("privacyPolicy", event.currentTarget.value)}
+            minRows={3}
+          />
+          <p>
+            <b>Updating these Terms</b>
+          </p>
           <p>
             As the user, I reserve the right to update my terms of conditions based on my needs and the protection of my interests. This
             includes any amendments or additions that I deem necessary for safeguarding my rights and privacy. It is understood that
             {platformName || "[PLATFORM NAME]"} shall adhere to these updated terms upon notification and acknowledgment of the changes.
           </p>
-          <p>In Case of Issues</p>
+          <p>
+            <b>In Case of Issues</b>
+          </p>
           <p>
             In the event of any disputes, I expect {platformName || "[PLATFORM NAME]"} to handle them fairly and transparently. If there are
             any problems or disagreements, I trust that you'll provide me with ample notice and the opportunity to address the issue before
@@ -187,13 +229,16 @@ export function DynamicTermsForm() {
 
           <p>Sincerely,</p>
           <TextInput
-            placeholder="[YOUR NAME]"
+            className={classes.inputStyle}
+            placeholder="YOUR NAME"
             value={name}
             onChange={(event) => updateTemplate("name", event.currentTarget.value)}
             required
           />
           <Group position="right" mt="md">
-            <Button onClick={() => console.log("Form submitted")}>Submit</Button>
+            <Button variant="transparent" onClick={() => console.log("Form submitted")}>
+              SUBMIT
+            </Button>
           </Group>
         </>
       )}

@@ -10,13 +10,28 @@ const useStyles = createStyles((theme) => ({
     paddingBottom: `calc(${theme.spacing.xl} * 5)`,
   },
 
+  termsLink: {
+    position: "fixed",
+    bottom: theme.spacing.xs, // Adjust as needed
+    right: theme.spacing.xs, // Adjust as needed
+    backgroundColor: "blue",
+    color: "white",
+    padding: `${theme.spacing.xs}px ${theme.spacing.sm}px`,
+    borderRadius: theme.radius.md,
+    textDecoration: "none", // Removes underline from the link
+    // Additional styling for hover, focus, etc., if needed
+    "&:hover": {
+      backgroundColor: theme.fn.darken("blue", 0.1),
+    },
+  },
+
   content: {
     maxWidth: rem(500),
     marginRight: `calc(${theme.spacing.xl} * 3)`,
 
     [theme.fn.smallerThan("md")]: {
       maxWidth: "100%",
-      marginRight: 0,
+      marginRight: "0.25 rem",
     },
   },
 
@@ -30,7 +45,8 @@ const useStyles = createStyles((theme) => ({
     // fontWeight: 900,
 
     [theme.fn.smallerThan("xs")]: {
-      fontSize: rem(28),
+      fontSize: rem(100),
+      wordSpacing: rem(-15),
     },
   },
 
@@ -93,13 +109,15 @@ export function Hero() {
             </Text>
           </div>
         </SimpleGrid>
+
         <Group lts={-0.04} mt={30} pb={40}>
           <Text size="sm">
             <a href="form"> WHAT ARE YOUR TERMS?</a>
           </Text>
         </Group>
       </div>
-      <div className="desktop-only" style={{ height: "calc(-51vh)", width: "100vw" }}>
+
+      <div className="desktop-only" style={{ height: "calc(-31vh)", width: "100vw" }}>
         <ViewerPage viewOnly />
       </div>
     </div>
