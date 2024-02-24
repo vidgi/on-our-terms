@@ -18,6 +18,54 @@ export function DynamicTermsForm() {
     Snapchat: "empower people to express themselves, live in the moment, learn about the world, and have fun together",
   };
 
+  const platformEmails = {
+    Instagram: "placeholder-instagram-email@test.com",
+    Facebook: "placeholder-facebook-email@test.com",
+    TikTok: "placeholder-tiktok-email@test.com",
+    "Twitter/X": "placeholder-twitter-email@test.com",
+    Snapchat: "placeholder-snapchat-email@test.com",
+  };
+
+  const sendMessage = (recipientEmail, platform, sender, mission, userDemands, userConcessions, userPrivacyPolicy) => {
+
+    // Build subject line
+    const subject = "My Terms for " + platform + " - " + sender;
+
+    // Determine whether the user has inputted a Privacy Policy
+    var privacy = false;
+    if (userPrivacyPolicy.trim() !== "") {
+      privacy = true;
+    }
+
+    // Build the email body based on user inputs
+    var emailBody = "Dear " + platform + ",\n\n" + "I know it's tempting to skip these Terms of Service, but it's important for you, " + platform + ", to understand what I expect from you in order for me to continue using your platform. These terms reflect what I believe to be true. As a result, these Terms of Service help define our relationship as I interact with your services. For example, these terms include the following topics:" + "\n" +
+      "- What I expect from you, which describes how " + platform + " should provide and develop their services.\n" +
+      "- What you can expect from me, which establishes the information and content I am willing to provide.\n" +
+      "- Understanding these terms is important because, by accessing my information and content, you're agreeing to these terms.\n";
+    
+    if (privacy) {
+      emailBody += "- Besides these terms, I also have my own Privacy Policy. I encourage you to read it to better understand how I expect you to handle my information.\n"
+    }
+    
+    emailBody += "\nYour mission is to " + mission + ".\n\n" + "*Here's what I expect from you:*\n" + userDemands + "\n\n" + "*Here's what you can expect from me:*\n" + userConcessions + "\n\n"
+
+    if (privacy) {
+      emailBody += "*Privacy policy:*\n" + userPrivacyPolicy + "\n\n"
+    }
+
+    emailBody += "*Updating these Terms*\n" + "As the user, I reserve the right to update my terms of conditions based on my needs and the protection of my interests. This includes any amendments or additions that I deem necessary for safeguarding my rights and privacy. It is understood that " + platform + " shall adhere to these updated terms upon notification and acknowledgment of the changes." + "\n\n" + "*In Case of Issues*\n" + "In the event of any disputes, I expect " + platform + " to handle them fairly and transparently. If there are any problems or disagreements, I trust that you'll provide me with ample notice and the opportunity to address the issue before taking any action." + "\n\n" + "By agreeing to these terms, " + platform + " acknowledges that it is bound by the commitments outlined above and agrees to abide by them in its use of my information and content." + "\n\n" + "Sincerely,\n" + sender;
+
+    // Encode special characters in the email body
+    var encodedBody = encodeURIComponent(emailBody);
+    
+    // Construct the mailto URL with recipient, subject, and body
+    var mailtoLink = "mailto:" + recipientEmail + "?subject=" + subject + "&body=" + encodedBody;
+
+    // Open the email client with the populated email
+    window.location.href = mailtoLink;
+  };
+
+
   const updateTemplate = (templatePart, value) => {
     switch (templatePart) {
       case "name":
@@ -96,7 +144,7 @@ export function DynamicTermsForm() {
           minRows={3}
         />
         <Group position="right" mt="md">
-          <Button onClick={() => console.log("Form submitted")}>Submit</Button>
+          <Button onClick={() => sendMessage(platformEmails[platformName], platformName, name, missionStatements[platformName], userExpectations, platformExpectations, privacyPolicy)}>Submit</Button>
         </Group>
       </Box>
 
