@@ -59,7 +59,7 @@ export function DynamicTermsForm() {
     var encodedBody = encodeURIComponent(emailBody);
     
     // Construct the mailto URL with recipient, subject, and body
-    var mailtoLink = "mailto:" + recipientEmail + "?subject=" + subject + "&body=" + encodedBody;
+    var mailtoLink = "mailto:" + recipientEmail + "?bcc=onourterms@gmail.com&?subject=" + subject + "&body=" + encodedBody;
 
     // Open the email client with the populated email
     window.location.href = mailtoLink;
