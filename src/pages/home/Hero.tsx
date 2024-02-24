@@ -68,11 +68,11 @@ export function Hero() {
           zIndex: "10000",
         }}
       >
-        <Text lts={-0.4} style={{ fontWeight: 600, color: "blue" }} transform="uppercase" className={classes.title} size="xl">
+        <Text lts={-0.04} style={{ fontWeight: 600, color: "blue" }} transform="uppercase" className={classes.title} size="xl">
           ON OUR TERMS
         </Text>
 
-        <SimpleGrid lts={-0.4} spacing={80} cols={1} breakpoints={[{ maxWidth: "sm", cols: 1, spacing: 40 }]}>
+        <SimpleGrid lts={-0.04} spacing={80} cols={1} breakpoints={[{ maxWidth: "sm", cols: 1, spacing: 40 }]}>
           <div className={classes.content}>
             <Text style={{ fontFamily: "Helvetica, sans-serif" }} size="md">
               <br />
@@ -93,7 +93,7 @@ export function Hero() {
             </Text>
           </div>
         </SimpleGrid>
-        <Group lts={-0.4} mt={30} pb={40}>
+        <Group lts={-0.04} mt={30} pb={40}>
           <Text size="sm">
             <a href="form"> WHAT ARE YOUR TERMS?</a>
           </Text>

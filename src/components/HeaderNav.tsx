@@ -107,7 +107,7 @@ export function HeaderNav() {
   const location = useLocation();
 
   return (
-    <Box lts={-0.4} className="noselect">
+    <Box lts={-0.04} className="noselect">
       <Header className={classes.header} sx={{ borderBottom: 0 }} height={60} px="md">
         <Group position="apart" sx={{ height: "100%" }}>
           {location.pathname !== "/" && (
