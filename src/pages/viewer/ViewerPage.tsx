@@ -14,7 +14,7 @@ export function ViewerPage(props) {
     <div>
       <Canvas
         camera={{ position: [-15, 0, 0] }}
-        style={{ position: "absolute", top: "0em", right: "0em", height: "145vh", width: "calc(63vw)" }}
+        style={{ position: "absolute", top: "0em", right: "0em", height: "98vh", width: "calc(63vw)" }}
       >
         <Suspense fallback={null}>
           <Samples viewOnly={props.viewOnly} data={data} />

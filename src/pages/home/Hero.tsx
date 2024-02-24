@@ -12,14 +12,13 @@ const useStyles = createStyles((theme) => ({
 
   termsLink: {
     position: "fixed",
-    bottom: theme.spacing.xs, // Adjust as needed
-    right: theme.spacing.xs, // Adjust as needed
+    bottom: theme.spacing.xs,
+    right: theme.spacing.xs,
     backgroundColor: "blue",
     color: "white",
     padding: `${theme.spacing.xs}px ${theme.spacing.sm}px`,
     borderRadius: theme.radius.md,
-    textDecoration: "none", // Removes underline from the link
-    // Additional styling for hover, focus, etc., if needed
+    textDecoration: "none",
     "&:hover": {
       backgroundColor: theme.fn.darken("blue", 0.1),
     },
@@ -41,8 +40,6 @@ const useStyles = createStyles((theme) => ({
     fontSize: rem(300),
     lineHeight: 0.77,
     wordSpacing: rem(-150),
-
-    // fontWeight: 900,
 
     [theme.fn.smallerThan("xs")]: {
       fontSize: rem(100),
@@ -92,20 +89,8 @@ export function Hero() {
           <div className={classes.content}>
             <Text style={{ fontFamily: "Helvetica, sans-serif" }} size="md">
               <br />
-              The terms of service and user agreements for major tech platforms represent an imbalance of power between users and platform
-              owners. Users must agree to lengthy and complex terms that grant platforms expansive rights to use, monetize, and share user
-              data. Users have little ability to negotiate these agreements, which often change without their consent. The agreements are
-              designed to limit platforms' liability, not to protect users. Users cannot opt out of key provisions and have few remedies if
-              platforms violate terms. Overall, the technical and legal architecture of platforms serves to maximize owner control while
-              restricting user rights. Users are reduced to passive participants under Terms of Service they likely haven't read or
-              comprehended, but cannot avoid accepting. This stark contrast illustrates the subordinate position of users in the platform
-              ecosystem, despite their critical role in creating value. Users are left with little power to address asymmetries embedded in
-              platform governance.
-              <br />
-              <br />
-              If the tech company terms of service is a declaration of a particular power dynamic, then On Our Terms is a collaborative
-              critical response. By rewriting the terms of service from the perspective of a community of users, large tech companies are
-              invited to agree to the users' terms. They need just sign on the dotted line!
+              The terms of service of major tech platforms give platform owners significant power, binding users to complex agreements that grant broad control over their data and content, with limited negotiation or consent. Users lack opt-out choices and remedies for breaches, revealing a system that prioritizes owner control over user rights. If the tech company's terms of service are a declaration of a particular power dynamic, then On Our Terms is a collaborative critical response, inviting tech companies to adopt terms defined by the user community.
+
             </Text>
           </div>
         </SimpleGrid>
