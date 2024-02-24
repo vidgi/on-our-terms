@@ -42,7 +42,7 @@ const useStyles = createStyles((theme) => ({
     wordSpacing: rem(-150),
 
     [theme.fn.smallerThan("xs")]: {
-      fontSize: rem(100),
+      fontSize: rem(85),
       wordSpacing: rem(-15),
     },
   },
@@ -89,7 +89,7 @@ export function Hero() {
           <div className={classes.content}>
             <Text style={{ fontFamily: "Helvetica, sans-serif" }} size="md">
               <br />
-              The terms of service of major tech platforms give platform owners significant power, binding users to complex agreements that grant broad control over their data and content, with limited negotiation or consent. Users lack opt-out choices and remedies for breaches, revealing a system that prioritizes owner control over user rights. If the tech company's terms of service are a declaration of a particular power dynamic, then On Our Terms is a collaborative critical response, inviting tech companies to adopt terms defined by the user community.
+              The terms of service of major tech platforms give platform owners significant power, binding users to complex agreements that grant broad control over their data and content, with limited negotiation or consent. Users lack opt-out choices and remedies for breaches, revealing a system that prioritizes owner control over user rights. If the tech company's terms of service are a declaration of a particular power dynamic, then <i>On Our Terms</i> is a collaborative critical response, inviting tech companies to adopt terms defined by the user community.
 
             </Text>
           </div>

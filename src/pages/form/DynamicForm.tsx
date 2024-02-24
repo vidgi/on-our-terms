@@ -44,12 +44,12 @@ export function DynamicTermsForm() {
       "& .mantine-Select-input, & .mantine-Select-filled, & .mantine-Select-outline": {
         color: "blue",
         fontWeight: 600,
-        height: rem(100),
+        height: rem(120),
         border: "none",
         borderBottom: `2px solid ${theme.colors.gray[4]}`,
         borderRadius: 0,
         [theme.fn.smallerThan("sm")]: {
-          height: rem(32),
+          height: rem(40),
           paddingLeft: 0,
         },
       },
@@ -76,6 +76,7 @@ export function DynamicTermsForm() {
 
       [theme.fn.smallerThan("sm")]: {
         fontSize: rem(32),
+        lineHeight: 1,
         wordSpacing: rem(-5),
       },
     },
@@ -131,7 +132,7 @@ export function DynamicTermsForm() {
     emailBody += "\nYour mission is to " + mission + ".\n\n" + "Here's what I expect from you:\n" + userDemands + "\n\n" + "Here's what you can expect from me:\n" + userConcessions + "\n\n"
 
     if (privacy) {
-      emailBody += "Privacy policy:\n" + userPrivacyPolicy + "\n\n"
+      emailBody += "Privacy Policy:\n" + userPrivacyPolicy + "\n\n"
     }
 
     emailBody += "Updating these Terms\n" + "As the user, I reserve the right to update my terms of conditions based on my needs and the protection of my interests. This includes any amendments or additions that I deem necessary for safeguarding my rights and privacy. It is understood that " + platform + " shall adhere to these updated terms upon notification and acknowledgment of the changes." + "\n\n" + "In Case of Issues\n" + "In the event of any disputes, I expect " + platform + " to handle them fairly and transparently. If there are any problems or disagreements, I trust that you'll provide me with ample notice and the opportunity to address the issue before taking any action." + "\n\n" + "By agreeing to these terms, " + platform + " acknowledges that it is bound by the commitments outlined above and agrees to abide by them in its use of my information and content." + "\n\n" + "Sincerely,\n" + sender;
@@ -258,7 +259,7 @@ export function DynamicTermsForm() {
           </p>
           <p>
             As the user, I reserve the right to update my terms of conditions based on my needs and the protection of my interests. This
-            includes any amendments or additions that I deem necessary for safeguarding my rights and privacy. It is understood that
+            includes any amendments or additions that I deem necessary for safeguarding my rights and privacy. It is understood that{" "}
             {platformName || "[PLATFORM NAME]"} shall adhere to these updated terms upon notification and acknowledgment of the changes.
           </p>
           <p>
