@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css?family=Plex+Mono:50&subset=latin,latin-ext");
+
+a:hover {
+  color: #ff0000;
+  /* color: #ffffff; */
+  /* background-color: #000000; */
+}
+
+a {
+  color: #0008ff;
+  text-decoration: none;
+}
+
+body {
+  font-family: Helvetica, sans-serif;
+  background-color: #ffffff;
+  color: #131313;
+  margin: 0;
+}
+
+.viewer {
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  opacity: 1;
+  border-radius: 5%;
+}
+
+.viewer:hover {
+  opacity: 0.5;
+}
+
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-panel,
+audio::-webkit-media-controls-mute-button,
+audio::-webkit-media-controls-timeline-container,
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display,
+audio::-webkit-media-controls-timeline,
+audio::-webkit-media-controls-volume-slider-container,
+audio::-webkit-media-controls-volume-slider,
+audio::-webkit-media-controls-seek-back-button,
+audio::-webkit-media-controls-seek-forward-button,
+audio::-webkit-media-controls-fullscreen-button,
+audio::-webkit-media-controls-rewind-button,
+audio::-webkit-media-controls-return-to-realtime-button,
+audio::-webkit-media-controls-toggle-closed-captions-button {
+  font-family: Courier, monospace;
+  font-size: 12px;
+}
+audio {
+  /* min-width: 200px; */
+  width: 100%;
+}
+.grid-audio {
+  /* min-width: 200px; */
+  position: relative;
+  top: calc(50% - 50px);
+}
+
+.detail-audio {
+  /* min-width: 200px; */
+  position: relative;
+  top: calc(50% - 30px);
+}
+
+.grid-video {
+  /* min-width: 200px; */
+  height: 89%;
+  width: 100%;
+  object-fit: cover;
+}
+
+video {
+  /* min-width: 200px; */
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 600px) {
+  .desktop-only {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .desktop-only {
+    display: none;
+  }
+}

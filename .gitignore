@@ -1,0 +1,17 @@
+# binaries
+bin/
+dist/
+lib/
+
+# editors
+*.swp
+.idea/
+.vs/
+.vscode/
+.DS_Store
+
+.env
+node_modules
+build
+
+.firebase
