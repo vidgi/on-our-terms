@@ -11,11 +11,11 @@ export function DynamicTermsForm() {
   const [privacyPolicy, setPrivacyPolicy] = useState("");
 
   const missionStatements = {
-    Instagram: "Bring me closer to the people and things I love.",
-    Facebook: "Give people the power to build community and bring the world closer together.",
-    TikTok: "Inspire creativity and bring joy.",
-    "Twitter/X": "Promote and protect the public conversation--to be the town square of the internet.",
-    Snapchat: "Empower people to express themselves, live in the moment, learn about the world, and have fun together.",
+    Instagram: "bring me closer to the people and things I love",
+    Facebook: "give people the power to build community and bring the world closer together",
+    TikTok: "inspire creativity and bring joy",
+    "Twitter/X": "promote and protect the public conversation--to be the town square of the internet",
+    Snapchat: "empower people to express themselves, live in the moment, learn about the world, and have fun together",
   };
 
   const updateTemplate = (templatePart, value) => {
@@ -58,7 +58,7 @@ export function DynamicTermsForm() {
       <Box sx={{ maxWidth: 500 }} mx="auto">
         <TextInput
           label="Your Name"
-          placeholder="John Doe"
+          placeholder="Enter Name"
           value={name}
           onChange={(event) => updateTemplate("name", event.currentTarget.value)}
           required

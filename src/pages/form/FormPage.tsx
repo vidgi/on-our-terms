@@ -46,7 +46,7 @@ export function FormPage() {
     <Container className={classes.root}>
       <div>
         <Text transform="uppercase" className={classes.title}>
-          Decide Your Terms
+          WHAT ARE YOUR TERMS?
         </Text>
       </div>
       <br></br> <br></br>

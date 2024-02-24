@@ -120,14 +120,14 @@ export function HeaderNav() {
 
           <Group sx={{ height: "100%" }} spacing={0} className={classes.hiddenMobile}>
             <a href="../form" className={classes.link}>
-              DECIDE YOUR TERMS
+              WHAT ARE YOUR TERMS?
             </a>
             {/* <a href="../terms" className={classes.link}>
               VIEW OUR TERMS{" "}
             </a> */}
-            <a href="../about" className={classes.link}>
+            {/* <a href="../about" className={classes.link}>
               ABOUT
-            </a>
+            </a> */}
           </Group>
           <Burger color="#000000" opened={drawerOpened} onClick={toggleDrawer} className={classes.hiddenDesktop} />
         </Group>
@@ -144,7 +144,7 @@ export function HeaderNav() {
 
           <Text size="sm">
             <a href="../form" className={classes.link}>
-              DECIDE YOUR TERMS
+              WHAT ARE YOUR TERMS
             </a>
           </Text>
           {/* <Text size="sm">
@@ -152,11 +152,11 @@ export function HeaderNav() {
               VIEW OUR TERMS
             </a>
           </Text> */}
-          <Text size="sm">
+          {/* <Text size="sm">
             <a href="../about" className={classes.link}>
               ABOUT
             </a>
-          </Text>
+          </Text> */}
 
           <Divider my="sm" color={theme.colorScheme === "dark" ? "dark.5" : "gray.1"} />
         </ScrollArea>

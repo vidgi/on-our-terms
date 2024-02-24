@@ -11,8 +11,11 @@ import { HomePage } from "./pages/home/HomePage";
 import { SamplePage } from "./pages/samples/SamplePage";
 import SampleDetailPage from "./pages/samples/SampleDetailPage";
 import { FormPage } from "./pages/form/FormPage";
+import { useLocation } from "react-router-dom";
 
 export default function App() {
+  const location = useLocation();
+
   return (
     <>
       <MantineProvider
@@ -27,11 +30,10 @@ export default function App() {
         }}
         // children={undefined}
       >
-        <HeaderNav />
-
+        {location.pathname !== "/" && <HeaderNav />}
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="about" element={<AboutPage />} />
+          {/* <Route path="about" element={<AboutPage />} /> */}
           <Route path="form" element={<FormPage />} />
           <Route path="terms" element={<SamplePage />} />
           <Route path="/term/:id" element={<SampleDetailPage />} />
