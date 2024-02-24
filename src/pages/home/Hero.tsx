@@ -25,6 +25,7 @@ const useStyles = createStyles((theme) => ({
     fontFamily: `Greycliff CF, ${theme.fontFamily}`,
     fontSize: rem(300),
     lineHeight: 0.77,
+    wordSpacing: rem(-150),
 
     // fontWeight: 900,
 

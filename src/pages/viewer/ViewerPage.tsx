@@ -12,7 +12,10 @@ const data = Array.from({ length: length }, (r = 15) => ({ random: Math.random()
 export function ViewerPage(props) {
   return (
     <div>
-      <Canvas camera={{ position: [-15, 0, 0] }} style={{ height: "100vh", width: "100vw" }}>
+      <Canvas
+        camera={{ position: [-15, 0, 0] }}
+        style={{ position: "absolute", top: "0em", right: "0em", height: "145vh", width: "calc(63vw)" }}
+      >
         <Suspense fallback={null}>
           <Samples viewOnly={props.viewOnly} data={data} />
           {props.viewOnly ? (
@@ -53,7 +56,7 @@ function ImageSample({ random, ...props }) {
       <Html transform>
         {props.viewOnly ? (
           <>
-            {type === "Image" ? <img src={file} alt={"term #" + index} width={500 / 3} /> : <></>}
+            {type === "Image" ? <img src={file} alt={"term #" + index} width={500 / 4} /> : <></>}
 
             {type === "Video" ? (
               <div style={{ height: "10vw" }}>
