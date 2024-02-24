@@ -44,12 +44,6 @@ export function FormPage() {
 
   return (
     <Container className={classes.root}>
-      <div>
-        <Text transform="uppercase" className={classes.title}>
-          WHAT ARE YOUR TERMS?
-        </Text>
-      </div>
-      <br></br> <br></br>
       <DynamicTermsForm />
       {/* <Image src={image} className={classes.mobileImage} />
         <Image src={image} className={classes.desktopImage} /> */}
