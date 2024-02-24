@@ -283,7 +283,7 @@ export function DynamicTermsForm() {
             required
           />
           <Group position="right" mt="md">
-            <Button variant="transparent" onClick=onClick={() => sendMessage(platformEmails[platformName], platformName, name, missionStatements[platformName], userExpectations, platformExpectations, privacyPolicy)}>
+            <Button variant="transparent" onClick={() => sendMessage(platformEmails[platformName], platformName, name, missionStatements[platformName], userExpectations, platformExpectations, privacyPolicy)}>
               SUBMIT
             </Button>
           </Group>
