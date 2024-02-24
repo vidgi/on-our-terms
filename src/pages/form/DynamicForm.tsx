@@ -19,11 +19,11 @@ export function DynamicTermsForm() {
   };
 
   const platformEmails = {
-    Instagram: "placeholder-instagram-email@test.com",
-    Facebook: "placeholder-facebook-email@test.com",
-    TikTok: "placeholder-tiktok-email@test.com",
-    "Twitter/X": "placeholder-twitter-email@test.com",
-    Snapchat: "placeholder-snapchat-email@test.com",
+    Instagram: "support@instagram.com",
+    Facebook: "support@fb.com",
+    TikTok: "feedback@tiktok.com",
+    "Twitter/X": "support@x.com",
+    Snapchat: "support@snapchat.com",
   };
 
   const sendMessage = (recipientEmail, platform, sender, mission, userDemands, userConcessions, userPrivacyPolicy) => {
@@ -59,7 +59,7 @@ export function DynamicTermsForm() {
     var encodedBody = encodeURIComponent(emailBody);
     
     // Construct the mailto URL with recipient, subject, and body
-    var mailtoLink = "mailto:" + recipientEmail + "?bcc=onourterms@gmail.com&?subject=" + subject + "&body=" + encodedBody;
+    var mailtoLink = "mailto:" + recipientEmail + "?bcc=unitedusersguild@gmail.com&subject=" + subject + "&body=" + encodedBody;
 
     // Open the email client with the populated email
     window.location.href = mailtoLink;
@@ -151,7 +151,7 @@ export function DynamicTermsForm() {
       <Box mt="md">
         <p>Dear {platformName || "[PLATFORM NAME]"},</p>
         <p>
-          I know it’s tempting to skip these Terms of Service, but it’s important for you, {platformName || "[PLATFORM NAME]"}, to
+          I know it's tempting to skip these Terms of Service, but it's important for you, {platformName || "[PLATFORM NAME]"}, to
           understand what I expect from you in order for me to continue using your platform. These terms reflect what I believe to be true.
           As a result, these Terms of Service help define our relationship as I interact with your services. For example, these terms
           include the following topics:
@@ -161,7 +161,7 @@ export function DynamicTermsForm() {
             What I expect from you, which describes how {platformName || "[PLATFORM NAME]"} should provide and develop their services.
           </li>
           <li>What you can expect from me, which establishes the information and content I am willing to provide.</li>
-          <li>Understanding these terms is important because, by accessing my information and content, you’re agreeing to these terms.</li>
+          <li>Understanding these terms is important because, by accessing my information and content, you're agreeing to these terms.</li>
           <li>
             Besides these terms, I also have my own Privacy Policy. I encourage you to read it to better understand how I expect you to
             handle my information.
@@ -173,8 +173,8 @@ export function DynamicTermsForm() {
           {userExpectations ||
             "I expect you to empower me to freely express myself and communicate about topics important to me. You must prioritize the safety, security, and integrity of its platform. This includes implementing measures to combat harmful conduct, protect user privacy, and respond promptly to any misuse or violations."}
         </p>
-        <p>Here’s what you can expect from me:</p>
-        <p>{platformExpectations || "I will act in good faith. I’ll manage my account responsibly."}</p>
+        <p>Here's what you can expect from me:</p>
+        <p>{platformExpectations || "I will act in good faith. I'll manage my account responsibly."}</p>
         {privacyPolicy && (
           <>
             <p>Privacy policy:</p>
