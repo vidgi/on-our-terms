@@ -11,7 +11,7 @@ const useStyles = createStyles((theme) => ({
   },
 
   content: {
-    maxWidth: rem(480),
+    maxWidth: rem(500),
     marginRight: `calc(${theme.spacing.xl} * 3)`,
 
     [theme.fn.smallerThan("md")]: {
@@ -23,8 +23,9 @@ const useStyles = createStyles((theme) => ({
   title: {
     color: "#131313",
     fontFamily: `Greycliff CF, ${theme.fontFamily}`,
-    fontSize: rem(44),
-    lineHeight: 1.2,
+    fontSize: rem(300),
+    lineHeight: 0.77,
+
     // fontWeight: 900,
 
     [theme.fn.smallerThan("xs")]: {
@@ -66,11 +67,11 @@ export function Hero() {
           zIndex: "10000",
         }}
       >
-        <Text style={{ fontWeight: 600, color: "blue" }} transform="uppercase" className={classes.title} size="md">
+        <Text lts={-0.4} style={{ fontWeight: 600, color: "blue" }} transform="uppercase" className={classes.title} size="xl">
           ON OUR TERMS
         </Text>
 
-        <SimpleGrid spacing={80} cols={1} breakpoints={[{ maxWidth: "sm", cols: 1, spacing: 40 }]}>
+        <SimpleGrid lts={-0.4} spacing={80} cols={1} breakpoints={[{ maxWidth: "sm", cols: 1, spacing: 40 }]}>
           <div className={classes.content}>
             <Text style={{ fontFamily: "Helvetica, sans-serif" }} size="md">
               <br />
@@ -91,7 +92,7 @@ export function Hero() {
             </Text>
           </div>
         </SimpleGrid>
-        <Group mt={30}>
+        <Group lts={-0.4} mt={30} pb={40}>
           <Text size="sm">
             <a href="form"> WHAT ARE YOUR TERMS?</a>
           </Text>

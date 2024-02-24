@@ -1,4 +1,4 @@
-import { TextInput, Select, Textarea, Button, Group, Box, SimpleGrid } from "@mantine/core";
+import { TextInput, Text, Select, Textarea, Button, Group, Box, SimpleGrid, rem, createStyles } from "@mantine/core";
 import { useState } from "react";
 import * as React from "react";
 
@@ -17,6 +17,43 @@ export function DynamicTermsForm() {
     "Twitter/X": "promote and protect the public conversation--to be the town square of the internet",
     Snapchat: "empower people to express themselves, live in the moment, learn about the world, and have fun together",
   };
+
+  const useStyles = createStyles((theme) => ({
+    root: {
+      paddingTop: rem(100),
+      paddingBottom: rem(40),
+    },
+
+    title: {
+      // fontWeight: 900,
+      fontSize: rem(34),
+      marginBottom: theme.spacing.md,
+      fontFamily: `Greycliff CF, ${theme.fontFamily}`,
+
+      [theme.fn.smallerThan("sm")]: {
+        fontSize: rem(32),
+      },
+    },
+
+    control: {
+      [theme.fn.smallerThan("sm")]: {
+        width: "100%",
+      },
+    },
+
+    mobileImage: {
+      [theme.fn.largerThan("sm")]: {
+        display: "none",
+      },
+    },
+
+    desktopImage: {
+      [theme.fn.smallerThan("sm")]: {
+        display: "none",
+      },
+    },
+  }));
+  const { classes } = useStyles();
 
   const updateTemplate = (templatePart, value) => {
     switch (templatePart) {
@@ -54,8 +91,14 @@ export function DynamicTermsForm() {
   };
 
   return (
-    <SimpleGrid spacing={80} cols={2} breakpoints={[{ maxWidth: "sm", cols: 1, spacing: 40 }]}>
+    <SimpleGrid lts={-0.4} spacing={80} cols={2} breakpoints={[{ maxWidth: "sm", cols: 1, spacing: 40 }]}>
       <Box sx={{ maxWidth: 500 }} mx="auto">
+        <div>
+          <Text transform="uppercase" className={classes.title}>
+            WHAT ARE YOUR TERMS
+          </Text>
+        </div>
+        <br></br> <br></br>
         <TextInput
           label="Your Name"
           placeholder="Enter Name"
@@ -71,7 +114,6 @@ export function DynamicTermsForm() {
           data={Object.keys(missionStatements).map((key) => ({ value: key, label: key }))}
           required
         />
-
         <Textarea
           label="What I expect from you"
           placeholder="I expect..."
