@@ -128,13 +128,13 @@ export function DynamicTermsForm() {
       emailBody += "- Besides these terms, I also have my own Privacy Policy. I encourage you to read it to better understand how I expect you to handle my information.\n"
     }
     
-    emailBody += "\nYour mission is to " + mission + ".\n\n" + "*Here's what I expect from you:*\n" + userDemands + "\n\n" + "*Here's what you can expect from me:*\n" + userConcessions + "\n\n"
+    emailBody += "\nYour mission is to " + mission + ".\n\n" + "Here's what I expect from you:\n" + userDemands + "\n\n" + "Here's what you can expect from me:\n" + userConcessions + "\n\n"
 
     if (privacy) {
-      emailBody += "*Privacy policy:*\n" + userPrivacyPolicy + "\n\n"
+      emailBody += "Privacy policy:\n" + userPrivacyPolicy + "\n\n"
     }
 
-    emailBody += "*Updating these Terms*\n" + "As the user, I reserve the right to update my terms of conditions based on my needs and the protection of my interests. This includes any amendments or additions that I deem necessary for safeguarding my rights and privacy. It is understood that " + platform + " shall adhere to these updated terms upon notification and acknowledgment of the changes." + "\n\n" + "*In Case of Issues*\n" + "In the event of any disputes, I expect " + platform + " to handle them fairly and transparently. If there are any problems or disagreements, I trust that you'll provide me with ample notice and the opportunity to address the issue before taking any action." + "\n\n" + "By agreeing to these terms, " + platform + " acknowledges that it is bound by the commitments outlined above and agrees to abide by them in its use of my information and content." + "\n\n" + "Sincerely,\n" + sender;
+    emailBody += "Updating these Terms\n" + "As the user, I reserve the right to update my terms of conditions based on my needs and the protection of my interests. This includes any amendments or additions that I deem necessary for safeguarding my rights and privacy. It is understood that " + platform + " shall adhere to these updated terms upon notification and acknowledgment of the changes." + "\n\n" + "In Case of Issues\n" + "In the event of any disputes, I expect " + platform + " to handle them fairly and transparently. If there are any problems or disagreements, I trust that you'll provide me with ample notice and the opportunity to address the issue before taking any action." + "\n\n" + "By agreeing to these terms, " + platform + " acknowledges that it is bound by the commitments outlined above and agrees to abide by them in its use of my information and content." + "\n\n" + "Sincerely,\n" + sender;
 
     // Encode special characters in the email body
     var encodedBody = encodeURIComponent(emailBody);
