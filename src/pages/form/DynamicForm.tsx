@@ -192,7 +192,7 @@ export function DynamicTermsForm() {
       <Text transform="uppercase" className={classes.title}>
           EMAIL HAS BEEN GENERATED
           </Text>
-            <Button size={"xl"} variant="transparent" onClick={refreshPage}>
+            <Button  sx={{ color: 'blue' }} size={"xl"} variant="transparent" onClick={refreshPage}>
               MAKE ANOTHER?
             </Button>
           </Group></> :  <>
@@ -295,7 +295,7 @@ export function DynamicTermsForm() {
             required
           />
           <Group position="right" mt="md">
-            <Button variant="transparent" onClick={() => sendMessage(platformEmails[platformName], platformName, name, missionStatements[platformName], userExpectations, platformExpectations, privacyPolicy)}>
+            <Button sx={{ color: 'blue' }} variant="transparent" onClick={() => sendMessage(platformEmails[platformName], platformName, name, missionStatements[platformName], userExpectations, platformExpectations, privacyPolicy)}>
               SUBMIT
             </Button>
           </Group>
