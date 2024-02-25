@@ -146,7 +146,7 @@ export function DynamicTermsForm() {
     var mailtoLink = "mailto:" + recipientEmail + "?bcc=unitedusersguild@gmail.com&subject=" + subject + "&body=" + encodedBody;
 
     // Open the email client with the populated email
-    // window.location.href = mailtoLink;
+    window.location.href = mailtoLink;
     
     setIsSubmitted(true);
 
