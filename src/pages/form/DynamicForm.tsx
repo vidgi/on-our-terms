@@ -10,6 +10,8 @@ export function DynamicTermsForm() {
   const [platformExpectations, setPlatformExpectations] = useState();
   const [privacyPolicy, setPrivacyPolicy] = useState("");
 
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
   const missionStatements = {
     Instagram: "bring me closer to the people and things I love",
     Facebook: "give people the power to build community and bring the world closer together",
@@ -144,7 +146,11 @@ export function DynamicTermsForm() {
     var mailtoLink = "mailto:" + recipientEmail + "?bcc=unitedusersguild@gmail.com&subject=" + subject + "&body=" + encodedBody;
 
     // Open the email client with the populated email
-    window.location.href = mailtoLink;
+    // window.location.href = mailtoLink;
+    
+    setIsSubmitted(true);
+
+
   };
 
 
@@ -176,15 +182,20 @@ export function DynamicTermsForm() {
   const handlePlatformChange = (value) => {
     setPlatformName(value);
   };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted");
+  const refreshPage = () => {
+    window.location.reload();
   };
 
   return (
     <Box lts={-0.04} sx={{ maxWidth: "100vw" }} mx="auto">
+      {isSubmitted ? <><Group position="right" mt="md">
+      <Text transform="uppercase" className={classes.title}>
+          EMAIL HAS BEEN GENERATED
+          </Text>
+            <Button size={"xl"} variant="transparent" onClick={refreshPage}>
+              MAKE ANOTHER?
+            </Button>
+          </Group></> :  <>
       <div>
         <Text transform="uppercase" className={classes.title}>
           {"WHAT ARE YOUR TERMS FOR "}
@@ -290,6 +301,8 @@ export function DynamicTermsForm() {
           </Group>
         </>
       )}
+      </>}
+     
     </Box>
   );
 }

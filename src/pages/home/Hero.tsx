@@ -10,6 +10,18 @@ const useStyles = createStyles((theme) => ({
     paddingBottom: `calc(${theme.spacing.xl} * 5)`,
   },
 
+  mobileViewer: {
+    display: 'none', // Hide by default
+    [theme.fn.smallerThan('sm')]: {
+      display: 'block', // Only display on small screens
+      height: '50vh',
+      width: '100%',
+    },
+  },
+
+
+
+
   termsLink: {
     position: "fixed",
     bottom: theme.spacing.xs,
@@ -73,6 +85,9 @@ export function Hero() {
   const { classes } = useStyles();
   return (
     <div>
+       <div className={classes.mobileViewer}>
+        <ViewerPage height={"50vh"} viewOnly />
+      </div>
       <div
         style={{
           position: "absolute",
@@ -102,8 +117,8 @@ export function Hero() {
         </Group>
       </div>
 
-      <div className="desktop-only" style={{ height: "calc(-31vh)", width: "100vw" }}>
-        <ViewerPage viewOnly />
+      <div className="desktop-only">
+        <ViewerPage height={"98vh"} viewOnly />
       </div>
     </div>
   );
